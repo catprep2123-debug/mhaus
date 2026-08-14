@@ -158,6 +158,18 @@
   <symbol id="icon-car" viewBox="0 0 24 24"><path d="M3 13l1.4-4.6A3 3 0 0 1 7.3 6.3h9.4a3 3 0 0 1 2.9 2.1L21 13v4a1 1 0 0 1-1 1h-1.2a1 1 0 0 1-1-1v-.5H6.2V17a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="7" cy="17.2" r="1.3" fill="currentColor"/><circle cx="17" cy="17.2" r="1.3" fill="currentColor"/></symbol>
 </svg>
 
+<!-- Preloader -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <span class="preloader-logo">MOTOR<span class="accent">HAUS</span></span>
+  <span class="preloader-bar"><i></i></span>
+</div>
+
+<!-- Scroll progress -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- Cursor glow -->
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
 <!-- Skip link -->
 <a href="#main" class="skip-link">Skip to content</a>
 
@@ -167,6 +179,7 @@
   <div class="grid-overlay"></div>
   <div class="glow glow-1"></div>
   <div class="glow glow-2"></div>
+  <div class="grain-overlay"></div>
 </div>
 
 <!-- Header -->
@@ -245,7 +258,6 @@
     <div class="hero-visual" aria-hidden="true">
       <div class="car-frame">
         <svg viewBox="0 0 400 200" class="car-svg">
-          <ellipse cx="200" cy="175" rx="170" ry="14" fill="url(#shadowGrad)"/>
           <defs>
             <linearGradient id="shadowGrad" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stop-color="#ff1e3c" stop-opacity="0.25"/>
@@ -256,13 +268,31 @@
               <stop offset="100%" stop-color="#0e0808"/>
             </linearGradient>
           </defs>
+
+          <g class="speed-lines">
+            <line class="speed-line l1" x1="-10" y1="112" x2="18" y2="112" stroke="#ff1e3c" stroke-width="2" stroke-linecap="round"/>
+            <line class="speed-line l2" x1="-10" y1="128" x2="12" y2="128" stroke="#ff1e3c" stroke-width="2" stroke-linecap="round"/>
+            <line class="speed-line l3" x1="-10" y1="145" x2="22" y2="145" stroke="#ff1e3c" stroke-width="2" stroke-linecap="round"/>
+          </g>
+
+          <ellipse cx="200" cy="175" rx="170" ry="14" fill="url(#shadowGrad)" class="car-shadow"/>
+
           <path d="M20 140 L45 95 Q65 65 105 65 H270 Q305 65 325 95 L365 130 L365 150 Q365 160 355 160 H35 Q20 160 20 145 Z" fill="url(#bodyGrad)" stroke="#ff1e3c" stroke-width="1.5" opacity="0.9"/>
           <path d="M105 68 L130 95 H255 L275 68" fill="none" stroke="#ff1e3c" stroke-width="1.2" opacity="0.6"/>
-          <circle cx="95" cy="160" r="26" fill="#06070a" stroke="#ff1e3c" stroke-width="3"/>
-          <circle cx="95" cy="160" r="10" fill="#ff1e3c" opacity="0.5"/>
-          <circle cx="300" cy="160" r="26" fill="#06070a" stroke="#ff1e3c" stroke-width="3"/>
-          <circle cx="300" cy="160" r="10" fill="#ff1e3c" opacity="0.5"/>
+
+          <g class="wheel" style="transform-origin:95px 160px">
+            <circle cx="95" cy="160" r="26" fill="#06070a" stroke="#ff1e3c" stroke-width="3"/>
+            <circle cx="95" cy="160" r="10" fill="#ff1e3c" opacity="0.5"/>
+            <path d="M95 138v44M73 160h44M79 144l32 32M111 144l-32 32" stroke="#ff1e3c" stroke-width="1.4" opacity="0.7"/>
+          </g>
+          <g class="wheel" style="transform-origin:300px 160px">
+            <circle cx="300" cy="160" r="26" fill="#06070a" stroke="#ff1e3c" stroke-width="3"/>
+            <circle cx="300" cy="160" r="10" fill="#ff1e3c" opacity="0.5"/>
+            <path d="M300 138v44M278 160h44M284 144l32 32M316 144l-32 32" stroke="#ff1e3c" stroke-width="1.4" opacity="0.7"/>
+          </g>
+
           <line x1="20" y1="145" x2="365" y2="145" stroke="#7a0012" stroke-width="1" opacity="0.4"/>
+          <ellipse class="headlight" cx="358" cy="136" rx="7" ry="5" fill="#fff5e0"/>
         </svg>
       </div>
     </div>
