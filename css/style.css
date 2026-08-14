@@ -311,7 +311,7 @@ h1, h2, h3, h4 {
   50% { transform: translateY(-16px) translateX(0) rotate(0deg); }
   75% { transform: translateY(-8px) translateX(-4px) rotate(0.6deg); }
 }
-.car-svg { width: 100%; height: auto; filter: drop-shadow(0 20px 40px rgba(255,30,60,0.2)); overflow: visible; }
+.car-svg { width: 100%; height: auto; filter: brightness(1.35) saturate(1.15) drop-shadow(0 20px 44px rgba(255,30,60,0.35)); overflow: visible; }
 .car-svg .wheel {
   transform-box: fill-box;
   transform-origin: 50% 50%;
