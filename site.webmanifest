@@ -1,0 +1,16 @@
+{
+  "name": "MotorHaus - Premium Car Care",
+  "short_name": "MotorHaus",
+  "description": "Premium automotive service center in Thoraipakkam, Chennai offering mechanical repairs, body work, detailing, ceramic coating, PPF and more.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#06070a",
+  "theme_color": "#ff1e3c",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
