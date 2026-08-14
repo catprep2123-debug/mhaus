@@ -301,6 +301,8 @@ h1, h2, h3, h4 {
   max-width: 560px;
   opacity: 0.9;
   z-index: 1;
+  will-change: transform, opacity;
+  transition: transform .15s linear, opacity .15s linear;
 }
 .car-frame { animation: floatCar 6s ease-in-out infinite; }
 @keyframes floatCar {

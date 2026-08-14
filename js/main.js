@@ -21,6 +21,9 @@
   /* ---- Sticky header + scroll progress ---- */
   var header = document.getElementById("siteHeader");
   var scrollProgress = document.getElementById("scrollProgress");
+  var heroSection = document.querySelector(".hero");
+  var heroVisual = document.querySelector(".hero-visual");
+  var heroVisualBaseOpacity = heroVisual ? parseFloat(getComputedStyle(heroVisual).opacity) || 0.9 : 0.9;
   function onScroll() {
     if (header) {
       if (window.scrollY > 40) header.classList.add("scrolled");
@@ -37,6 +40,19 @@
       var scrollable = document.documentElement.scrollHeight - window.innerHeight;
       var pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
       scrollProgress.style.width = pct + "%";
+    }
+
+    if (heroSection && heroVisual && !prefersReducedMotion) {
+      var rect = heroSection.getBoundingClientRect();
+      // 0 at top of viewport, 1 once the hero has fully scrolled past
+      var driveProgress = Math.min(Math.max(-rect.top / rect.height, 0), 1);
+      // travel the full viewport width so the car exits completely off the left edge
+      var travel = rect.width + heroVisual.offsetWidth;
+      var tx = -driveProgress * travel;
+      var ty = -driveProgress * 40;
+      var rot = -driveProgress * 4;
+      heroVisual.style.transform = "translate3d(" + tx + "px," + ty + "px,0) rotate(" + rot + "deg)";
+      heroVisual.style.opacity = String(heroVisualBaseOpacity * (1 - driveProgress * 0.3));
     }
   }
   window.addEventListener("scroll", onScroll, { passive: true });
