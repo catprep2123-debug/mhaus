@@ -1,0 +1,28 @@
+{
+  "name": "motorhaus",
+  "version": "1.0.0",
+  "description": "MotorHaus - Premium Car Service Center in Thoraipakkam, Chennai",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/catprep2123-debug/mhaus.git"
+  },
+  "keywords": [
+    "motorhaus",
+    "car-service",
+    "chennai",
+    "automotive"
+  ],
+  "author": "MotorHaus",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/catprep2123-debug/mhaus/issues"
+  },
+  "homepage": "https://github.com/catprep2123-debug/mhaus#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
